@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'first_screen.dart';
 import 'set_image.dart';
 import 'my_container.dart';
+import 'set_appbar_with_drawer.dart';
 
 class SetButtons extends StatelessWidget {
   @override
@@ -106,15 +107,35 @@ class SetButtons extends StatelessWidget {
                               ),
                             ))
                       ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Expanded(
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                  left: 0.0, right: 0.0, top: 5.0, bottom: 5.0),
+                              child: RaisedButton(
+                                onPressed: () {
+                                  show_drawer(context);
+                                },
+                                color: Colors.deepPurple,
+                                child: Text(
+                                  "Show Drawer",
+                                  style: TextStyle(
+                                      fontSize: 15.0, color: Colors.white,fontFamily: 'IndieFlower-Regular' ),
+                                ),
+                                elevation: 16.0,
+                                padding: EdgeInsets.all(20.0),
+                              ),
+                            ))
+                      ],
                     )
-
                   ],
                 )
             )
         )
     );
   }
-
 
 }
 
@@ -137,4 +158,8 @@ void show_Container(BuildContext context) {
 
 void say_hello(BuildContext context) {
   Navigator.of(context).push(MaterialPageRoute(builder: (context) => first_screen()));
+}
+
+void show_drawer(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SetAppBarWithDrawer()));
 }
