@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:my_first_flutter_sample/screens/set_appbar_with_drawer.dart';
 
 class SetListView extends StatelessWidget{
   @override
