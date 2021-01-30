@@ -4,6 +4,7 @@ import 'first_screen.dart';
 import 'set_image.dart';
 import 'my_container.dart';
 import 'set_appbar_with_drawer.dart';
+import 'set_list_view.dart';
 
 class SetButtons extends StatelessWidget {
   @override
@@ -12,7 +13,7 @@ class SetButtons extends StatelessWidget {
         child: Center(
             child: Container(
                 margin: EdgeInsets.only(
-                    left: 20.0, top: 200.0, right: 20.0, bottom: 200.0),
+                    left: 20.0, top: 100.0, right: 20.0, bottom: 100.0),
                 alignment: Alignment.center,
                 child: Column(
                   children: <Widget>[
@@ -129,6 +130,28 @@ class SetButtons extends StatelessWidget {
                               ),
                             ))
                       ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Expanded(
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                  left: 0.0, right: 0.0, top: 5.0, bottom: 5.0),
+                              child: RaisedButton(
+                                onPressed: () {
+                                  show_list_view(context);
+                                },
+                                color: Colors.deepPurple,
+                                child: Text(
+                                  "Show List View",
+                                  style: TextStyle(
+                                      fontSize: 15.0, color: Colors.white,fontFamily: 'IndieFlower-Regular' ),
+                                ),
+                                elevation: 16.0,
+                                padding: EdgeInsets.all(20.0),
+                              ),
+                            ))
+                      ],
                     )
                   ],
                 )
@@ -136,6 +159,7 @@ class SetButtons extends StatelessWidget {
         )
     );
   }
+
 
 }
 
@@ -162,4 +186,8 @@ void say_hello(BuildContext context) {
 
 void show_drawer(BuildContext context) {
   Navigator.of(context).push(MaterialPageRoute(builder: (context) => SetAppBarWithDrawer()));
+}
+
+void show_list_view(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SetListView()));
 }
