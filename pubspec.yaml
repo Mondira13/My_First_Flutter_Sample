@@ -79,3 +79,8 @@ flutter:
 
   assets:
     - images/flower.jpg
+    - images/food_one.jpg
+    - images/food_two.jpg
+    - images/food_three.jpg
+    - images/food_five.jpg
+    - images/food_seven.jpg

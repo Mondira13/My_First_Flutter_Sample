@@ -6,6 +6,7 @@ import 'my_container.dart';
 import 'set_appbar_with_drawer.dart';
 import 'set_list_view.dart';
 import 'set_grid_view.dart';
+import 'set_horizontal_list.dart';
 
 class SetButtons extends StatelessWidget {
   @override
@@ -175,6 +176,28 @@ class SetButtons extends StatelessWidget {
                               ),
                             ))
                       ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Expanded(
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                  left: 0.0, right: 0.0, top: 5.0, bottom: 5.0),
+                              child: RaisedButton(
+                                onPressed: () {
+                                  show_horizontal_list(context);
+                                },
+                                color: Colors.deepPurple,
+                                child: Text(
+                                  "Show Horizontal List",
+                                  style: TextStyle(
+                                      fontSize: 15.0, color: Colors.white,fontFamily: 'IndieFlower-Regular' ),
+                                ),
+                                elevation: 16.0,
+                                padding: EdgeInsets.all(20.0),
+                              ),
+                            ))
+                      ],
                     )
                   ],
                 )
@@ -217,4 +240,8 @@ void show_list_view(BuildContext context) {
 
 void show_grid_view(BuildContext context) {
   Navigator.of(context).push(MaterialPageRoute(builder: (context) => SetGridView()));
+}
+
+void show_horizontal_list(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SetHorizontalList()));
 }
