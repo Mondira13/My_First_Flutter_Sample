@@ -7,6 +7,7 @@ import 'set_appbar_with_drawer.dart';
 import 'set_list_view.dart';
 import 'set_grid_view.dart';
 import 'set_horizontal_list.dart';
+import 'set_stateful_widget.dart';
 
 class SetButtons extends StatelessWidget {
   @override
@@ -15,7 +16,7 @@ class SetButtons extends StatelessWidget {
         child: Center(
             child: Container(
                 margin: EdgeInsets.only(
-                    left: 20.0, top: 100.0, right: 20.0, bottom: 100.0),
+                    left: 20.0, top: 50.0, right: 20.0, bottom: 50.0),
                 alignment: Alignment.center,
                 child: Column(
                   children: <Widget>[
@@ -198,6 +199,28 @@ class SetButtons extends StatelessWidget {
                               ),
                             ))
                       ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Expanded(
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                  left: 0.0, right: 0.0, top: 5.0, bottom: 5.0),
+                              child: RaisedButton(
+                                onPressed: () {
+                                  show_stateful_widget(context);
+                                },
+                                color: Colors.deepPurple,
+                                child: Text(
+                                  "Show Stateful Widget",
+                                  style: TextStyle(
+                                      fontSize: 15.0, color: Colors.white,fontFamily: 'IndieFlower-Regular' ),
+                                ),
+                                elevation: 16.0,
+                                padding: EdgeInsets.all(20.0),
+                              ),
+                            ))
+                      ],
                     )
                   ],
                 )
@@ -244,4 +267,8 @@ void show_grid_view(BuildContext context) {
 
 void show_horizontal_list(BuildContext context) {
   Navigator.of(context).push(MaterialPageRoute(builder: (context) => SetHorizontalList()));
+}
+
+void show_stateful_widget(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SetStatefulWidget()));
 }
